@@ -1,0 +1,220 @@
+.container-1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-content: center;
+  gap: 10px;
+  height: 100px;
+  font-family: var(--main--font);
+}
+.container-1 .box {
+  padding: 20px;
+}
+.container-1 .box.red.lighten-1 {
+  background-color: #ff3333;
+}
+.container-1 .box.red.lighten-2 {
+  background-color: #ff6666;
+}
+.container-1 .box.red.lighten-3 {
+  background-color: #ff9999;
+}
+.container-1 .box.red.lighten-4 {
+  background-color: #ffcccc;
+}
+.container-1 .box.red.base-color {
+  background-color: red;
+}
+.container-1 .box.red.darken-1 {
+  background-color: #cc0000;
+}
+.container-1 .box.red.darken-2 {
+  background-color: #990000;
+}
+.container-1 .box.red.darken-3 {
+  background-color: #660000;
+}
+.container-1 .box.red.darken-4 {
+  background-color: #330000;
+}
+.container-1 .box.green.lighten-1 {
+  background-color: #00b300;
+}
+.container-1 .box.green.lighten-2 {
+  background-color: #00e600;
+}
+.container-1 .box.green.lighten-3 {
+  background-color: #1aff1a;
+}
+.container-1 .box.green.lighten-4 {
+  background-color: #4dff4d;
+}
+.container-1 .box.green.base-color {
+  background-color: green;
+}
+.container-1 .box.green.darken-1 {
+  background-color: #004d00;
+}
+.container-1 .box.green.darken-2 {
+  background-color: #001a00;
+}
+.container-1 .box.green.darken-3 {
+  background-color: black;
+}
+.container-1 .box.green.darken-4 {
+  background-color: black;
+}
+.container-1 .box.blue.lighten-1 {
+  background-color: #3333ff;
+}
+.container-1 .box.blue.lighten-2 {
+  background-color: #6666ff;
+}
+.container-1 .box.blue.lighten-3 {
+  background-color: #9999ff;
+}
+.container-1 .box.blue.lighten-4 {
+  background-color: #ccccff;
+}
+.container-1 .box.blue.base-color {
+  background-color: blue;
+}
+.container-1 .box.blue.darken-1 {
+  background-color: #0000cc;
+}
+.container-1 .box.blue.darken-2 {
+  background-color: #000099;
+}
+.container-1 .box.blue.darken-3 {
+  background-color: #000066;
+}
+.container-1 .box.blue.darken-4 {
+  background-color: #000033;
+}
+
+:root {
+  --main--font: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  --secondary--font: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  --base--color: hsl(0,100%,50%);
+  --important--color: hsl(0,100%,20%);
+  --warning--color: hsl(0,100%,80%);
+  --main--shadow: -5px 4px 6px 2px;
+}
+
+.container-2 {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  background-color: var(--main--color);
+}
+.container-2 div {
+  text-align: center;
+  align-content: center;
+  width: 100px;
+  height: 100px;
+}
+.container-2 div.base {
+  background-color: var(--base--color);
+}
+.container-2 div.important {
+  background-color: var(--important--color);
+}
+.container-2 div.warning {
+  background-color: var(--warning--color);
+}
+.container-2 div.shadow {
+  box-shadow: var(--main--shadow);
+}
+.container-2 p.principalFont {
+  font-family: var(--main--font);
+}
+.container-2 p.secondaryFont {
+  font-family: var(--secondary--font);
+}
+
+h3 {
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav {
+  background-color: #006a7b;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  color: #FFFFFF;
+  padding: 10px 15px;
+  font-size: 12px;
+}
+nav ul li a:hover {
+  background-color: #2f4858;
+}
+
+@media only screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  background-color: #eeeeee;
+  padding: 10px 20px;
+}
+.cards .card {
+  background-color: #ffffff;
+  margin: 0px 10px;
+}
+.cards .card .head img {
+  display: block;
+  max-width: 100%;
+}
+.cards .card .content {
+  padding: 0px 15px 10px 15px;
+}
+.cards .card .content h3 {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+}
+.cards .card .content p.description, .cards .card .content p.published {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 22px;
+}
+.cards .card .content p.published {
+  text-align: right;
+  font-size: 12px;
+  font-weight: 600;
+}
+.cards .card .content p.published span {
+  color: #a7d1a3;
+}
+.cards .card .content button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #7abe47;
+  border: none;
+  color: #ffffff;
+}/*# sourceMappingURL=style.css.map */

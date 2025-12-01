@@ -1,0 +1,194 @@
+
+// Ejercicio 1
+$red:red;
+$green:green;
+$blue:blue;
+
+@mixin coloreo ($color){
+        &.lighten-1{   
+            background-color: lighten($color,  10%);
+        }
+        &.lighten-2{   
+            background-color: lighten($color,20%);
+        }
+        &.lighten-3{   
+            background-color: lighten($color,30%);
+        }
+        &.lighten-4{   
+            background-color: lighten($color,40%);
+        }
+        &.base-color{
+            background-color: $color;
+        }
+        &.darken-1{
+            background-color: darken($color,  10%);
+        }
+        &.darken-2{
+            background-color: darken($color,  20%);
+        }
+        &.darken-3{
+            background-color: darken($color,  30%);
+        }
+        &.darken-4{
+            background-color: darken($color,  40%);
+        }
+}
+.container-1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: center;
+    gap: 10px;
+    height: 100px;
+    //font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--main--font);
+    
+    .box{
+        padding: 20px;
+        &.red{
+            $color:$red;
+            @include coloreo($color);
+        }
+        &.green{
+            $color:$green;
+            @include coloreo($color);
+        }
+        &.blue{
+            $color:$blue;
+            @include coloreo($color);
+        }
+    }
+}
+
+// Ejercicio 2
+@import "themeA";
+
+.container-2{
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    background-color: var(--main--color);
+    div{
+        text-align: center;
+        align-content: center;
+        width: 100px;
+        height: 100px;
+       
+
+        &.base{
+            background-color: var(--base--color);
+        }
+        &.important{
+            background-color: var(--important--color);
+        }
+        &.warning{
+            background-color: var(--warning--color);
+        }
+        &.shadow{
+            box-shadow: var(--main--shadow);
+        }
+    }
+    p.principalFont{
+        font-family: var(--main--font);
+    }
+    p.secondaryFont{
+        font-family: var(--secondary--font);
+    }
+}
+
+// Ejercicio 3
+h3{
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+nav{
+    background-color: #006a7b;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    ul{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        li{
+            list-style: none;
+            a{
+                display: block;
+                text-decoration: none;
+                color: #FFFFFF;
+                padding: 10px 15px;
+                font-size: 12px;
+                &:hover{
+                    background-color: #2f4858;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    nav{
+        ul{
+            flex-direction: column;
+            // align-content: center;
+            text-align: center;
+        }
+    }
+}
+
+// Ejercicio 4
+.cards{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 10px;
+    background-color:#eeeeee;
+    padding:10px 20px;
+
+    .card{
+        background-color:#ffffff;
+        margin:0px 10px;
+        
+        .head{
+            img{
+                display:block;
+                max-width:100%;
+            }
+        }
+        .content{
+            padding:0px 15px 10px 15px;
+            
+            h3{
+                font-family: "Manrope", sans-serif;
+                font-optical-sizing: auto;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 22px;
+            }
+            p.description, p.published{  
+                font-family: "Manrope", sans-serif;
+                font-optical-sizing: auto;
+                font-style: normal;
+                font-weight: 200;
+                font-size:14px;
+                line-height: 22px;
+            }
+            p.published{
+                text-align:right;
+                font-size:12px;
+                font-weight:600;
+                span{
+                    color:#a7d1a3;
+                }
+            }
+            button{
+                display:block;
+                width: 100%;
+                padding: 10px;
+                background-color:#7abe47;
+                border:none;
+                color:#ffffff;
+            }
+        }
+    }
+}
